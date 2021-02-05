@@ -18,7 +18,7 @@ io.on('connection', (client) => {
 
         client.join(data.sala);
 
-        let personas = usuarios.agregarPersona( client.id, data.nombre, data.sala );
+        let personas = usuarios.agregarPersona( client.id, data.nombre, data.sala, data.user_id );
 
         client.broadcast.to(data.sala).emit('listaPersona',usuarios.getPersonasPorSala(data.sala));
         client.broadcast.to(data.sala).emit('enviarMensaje', crearMensaje('Server', `${data.nombre} se unió`))
