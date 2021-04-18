@@ -2,11 +2,11 @@ const cron = require('node-cron');
 const axios = require('axios');
 
 // Ejecutar cada */# * * * * (5 * = minutos, */# = intervalo 0-59)
-cron.schedule('*/30 * * * *', () => {
+cron.schedule('*/5 * * * *', () => {
     
 
     
-    axios.get('http://mej.com.devel/revisar_pendientes')
+    axios.get('https://www.managerexperiencejourney.com/revisar_pendientes')
     .then(function (response) {
         var fecha = new Date();
 
